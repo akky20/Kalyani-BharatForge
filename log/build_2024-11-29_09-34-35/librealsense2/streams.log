@@ -1,0 +1,65 @@
+[0.027s] Invoking command in '/home/host/dev_ws/autobot/src/build/librealsense2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/host/dev_ws/autobot/src/librealsense -DCMAKE_INSTALL_PREFIX=/home/host/dev_ws/autobot/src/install/librealsense2
+[0.363s] -- The CXX compiler identification is GNU 11.4.0
+[0.363s] -- The C compiler identification is GNU 11.4.0
+[0.364s] -- Detecting CXX compiler ABI info
+[0.364s] -- Detecting CXX compiler ABI info - done
+[0.364s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.364s] -- Detecting CXX compile features
+[0.364s] -- Detecting CXX compile features - done
+[0.364s] -- Detecting C compiler ABI info
+[0.364s] -- Detecting C compiler ABI info - done
+[0.364s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.364s] -- Detecting C compile features
+[0.364s] -- Detecting C compile features - done
+[0.364s] -- Checking internet connection...
+[1.742s] -- Internet connection identified
+[1.745s] -- Info: REALSENSE_VERSION_STRING=2.55.1
+[1.746s] -- Setting Unix configurations
+[1.746s] -- No output directory set; using /home/host/dev_ws/autobot/src/build/librealsense2/Release/
+[1.754s] -- Building libcurl enabled
+[1.815s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.817s] -- Performing Test SUPPORTS_CXX14
+[1.870s] -- Performing Test SUPPORTS_CXX14 - Success
+[1.872s] -- using RS2_USE_V4L2_BACKEND
+[1.878s] -- Found usb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.882s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[1.883s] -- Checking for module 'libudev'
+[1.892s] --   Found libudev, version 249
+[1.918s] -- Found Udev: /usr/include  
+[1.923s] -- Fetching nlohmann/json...
+[2.040s] Cloning into 'json'...
+[49.143s] error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+[49.164s] error: 7690 bytes of body are still expected
+[49.357s] fetch-pack: unexpected disconnect while reading sideband packet
+[49.357s] fatal: early EOF
+[49.357s] fatal: fetch-pack: invalid index-pack output
+[49.393s] Cloning into 'json'...
+[109.740s] error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+[109.740s] error: 1279 bytes of body are still expected
+[109.744s] fetch-pack: unexpected disconnect while reading sideband packet
+[109.744s] fatal: early EOF
+[109.746s] fatal: fetch-pack: invalid index-pack output
+[109.759s] Cloning into 'json'...
+[25791.510s] error: RPC failed; curl 56 GnuTLS recv error (-54): Error in the pull function.
+[25791.511s] error: 6206 bytes of body are still expected
+[25791.511s] fetch-pack: unexpected disconnect while reading sideband packet
+[25791.511s] fatal: early EOF
+[25791.512s] fatal: fetch-pack: invalid index-pack output
+[25791.512s] CMake Error at /home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/tmp/nlohmann_json-gitclone.cmake:31 (message):
+[25791.513s]   Failed to clone repository: 'https://github.com/nlohmann/json.git'
+[25791.513s] 
+[25791.513s] 
+[25791.513s] gmake[2]: *** [CMakeFiles/nlohmann_json.dir/build.make:98: src/nlohmann_json-stamp/nlohmann_json-download] Error 1
+[25791.513s] gmake[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/nlohmann_json.dir/all] Error 2
+[25791.513s] gmake: *** [Makefile:91: all] Error 2
+[25791.513s] [31mCMake Error at CMake/external_json.cmake:34 (message):
+[25791.513s]   Failed to download nlohmann/json
+[25791.513s] Call Stack (most recent call first):
+[25791.513s]   CMake/external_json.cmake:50 (get_nlohmann_json)
+[25791.514s]   third-party/CMakeLists.txt:3 (include)
+[25791.514s]   CMakeLists.txt:58 (include)
+[25791.514s] 
+[25791.514s] [0m
+[25791.514s] -- Configuring incomplete, errors occurred!
+[25791.514s] See also "/home/host/dev_ws/autobot/src/build/librealsense2/CMakeFiles/CMakeOutput.log".
+[25791.514s] Invoked command in '/home/host/dev_ws/autobot/src/build/librealsense2' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/host/dev_ws/autobot/src/librealsense -DCMAKE_INSTALL_PREFIX=/home/host/dev_ws/autobot/src/install/librealsense2

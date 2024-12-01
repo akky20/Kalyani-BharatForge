@@ -1,0 +1,3 @@
+[console_scripts]
+your_script = autobot_recog.your_script:main
+

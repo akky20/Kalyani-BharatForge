@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+f3a509eaad185a0a69b9d5319015ab72 CMakeFiles/nlohmann_json
+b154ed78b07976896bde94b606c96943 CMakeFiles/nlohmann_json-complete
+73325972851101962db0725e24b84a62 src/nlohmann_json-stamp/nlohmann_json-build
+e2176ad7fcec4fa9daae3edaa6ef50f6 src/nlohmann_json-stamp/nlohmann_json-configure
+3aa20ba673e14673cf5106d23ae16964 src/nlohmann_json-stamp/nlohmann_json-download
+dd4f520d432b0e03608ff82d94fd4916 src/nlohmann_json-stamp/nlohmann_json-install
+67221207a7a8a953a76a77cba7ac96bc src/nlohmann_json-stamp/nlohmann_json-mkdir
+2c44801f1dea2e352b52edd4b185b3c8 src/nlohmann_json-stamp/nlohmann_json-patch
+73a9501003d4d83459cbf67bfab76740 src/nlohmann_json-stamp/nlohmann_json-update

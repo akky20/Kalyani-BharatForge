@@ -1,0 +1,13 @@
+# Target labels
+ nlohmann_json
+# Source files and their labels
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/nlohmann_json
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/nlohmann_json.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/nlohmann_json-complete.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-build.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-configure.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-download.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-install.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-mkdir.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-patch.rule
+/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/src/nlohmann_json-stamp/nlohmann_json-update.rule

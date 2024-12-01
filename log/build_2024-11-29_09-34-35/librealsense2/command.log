@@ -1,0 +1,2 @@
+Invoking command in '/home/host/dev_ws/autobot/src/build/librealsense2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/host/dev_ws/autobot/src/librealsense -DCMAKE_INSTALL_PREFIX=/home/host/dev_ws/autobot/src/install/librealsense2
+Invoked command in '/home/host/dev_ws/autobot/src/build/librealsense2' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/host/dev_ws/autobot/src/librealsense -DCMAKE_INSTALL_PREFIX=/home/host/dev_ws/autobot/src/install/librealsense2

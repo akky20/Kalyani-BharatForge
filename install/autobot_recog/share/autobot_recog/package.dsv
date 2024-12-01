@@ -1,0 +1,6 @@
+source;share/autobot_recog/hook/pythonpath.ps1
+source;share/autobot_recog/hook/pythonpath.dsv
+source;share/autobot_recog/hook/pythonpath.sh
+source;share/autobot_recog/hook/ament_prefix_path.ps1
+source;share/autobot_recog/hook/ament_prefix_path.dsv
+source;share/autobot_recog/hook/ament_prefix_path.sh
