@@ -15,8 +15,9 @@ setup(
         ('share/' + package_name + '/urdf', glob.glob('urdf/*.xacro')),  # Add this line for the URDF
     ],
     scripts=[
-            'scripts/move.py',       # Add the move script
-            'scripts/image_save.py'  # Add the image_save script
+            'scripts/move.py',      
+            'scripts/image_save.py',
+            'scripts/agent_node.py',  
         ],    
     install_requires=['setuptools'],
     zip_safe=True,
@@ -27,9 +28,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'move = move:main',  # This points to the main function of your move.py
-            'image_save = image_save:main',  # This points to the main function of your move.py
-
+            'move = move:main',  
+            'image_save = image_save:main', 
+            'agent_node = agent_node:main',  
         ],
     },
 )

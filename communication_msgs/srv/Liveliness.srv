@@ -1,0 +1,6 @@
+string sender_id
+string request 
+---
+string receiver_id
+string requester_id
+string reply

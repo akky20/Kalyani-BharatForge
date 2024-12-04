@@ -1,0 +1,416 @@
+<?xml version="1.0" ?>
+      <sdf version="1.7">
+        <world name="default_world">
+          <include>
+            <uri>model://sun</uri>
+          </include>
+          <include>
+            <uri>model://ground_plane</uri>
+          </include>
+
+          <!-- Light Sources -->
+          
+          <light name="light_0" type="point">
+            <pose>2.5 2.5 5 0 0 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+            <attenuation>
+              <range>20</range>
+              <constant>0.5</constant>
+              <linear>0.01</linear>
+              <quadratic>0.001</quadratic>
+            </attenuation>
+            <cast_shadows>false</cast_shadows>
+          </light>
+      
+          <light name="light_1" type="point">
+            <pose>7.5 2.5 5 0 0 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+            <attenuation>
+              <range>20</range>
+              <constant>0.5</constant>
+              <linear>0.01</linear>
+              <quadratic>0.001</quadratic>
+            </attenuation>
+            <cast_shadows>false</cast_shadows>
+          </light>
+      
+          <light name="light_2" type="point">
+            <pose>2.5 7.5 5 0 0 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+            <attenuation>
+              <range>20</range>
+              <constant>0.5</constant>
+              <linear>0.01</linear>
+              <quadratic>0.001</quadratic>
+            </attenuation>
+            <cast_shadows>false</cast_shadows>
+          </light>
+      
+          <light name="light_3" type="point">
+            <pose>7.5 7.5 5 0 0 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+            <attenuation>
+              <range>20</range>
+              <constant>0.5</constant>
+              <linear>0.01</linear>
+              <quadratic>0.001</quadratic>
+            </attenuation>
+            <cast_shadows>false</cast_shadows>
+          </light>
+      
+
+          <!-- Static Objects -->
+          
+        <model name="wall_1">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>10.0 0.1 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>10.0 0.1 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>5.0 0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_2">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>0.1 10.0 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>0.1 10.0 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>10.0 5.0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_3">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>10.0 0.1 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>10.0 0.1 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>5.0 10.0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_4">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>0.1 10.0 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>0.1 10.0 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>0 5.0 1.5 0 0 0</pose>
+        </model>
+        
+      <include>
+        <uri>model://fire_hydrant</uri>
+        <name>fire_hydrant_0</name>
+        <pose>9.5 9.5 0 0 0 0</pose>
+      </include>
+      
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_0</name>
+        <pose>3.6993320150438427 2.773637524326449 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_1</name>
+        <pose>5.731155043209782 8.142475115538325 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_2</name>
+        <pose>3.5172588889346295 7.938571576760071 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_3</name>
+        <pose>3.9638799787277668 1.3851899514774602 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_4</name>
+        <pose>6.935364134167879 2.1540166991373764 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_5</name>
+        <pose>5.901277875690204 3.900490276863418 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_6</name>
+        <pose>1.530757958238342 8.649079719849242 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_7</name>
+        <pose>8.810844400302289 7.912652841198086 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_8</name>
+        <pose>4.638461588602089 5.074977991292158 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_9</name>
+        <pose>9.674333481360888 1.011361778696755 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_10</name>
+        <pose>3.09766129516739 5.650830018582612 0 0 0 0</pose>
+      </include>
+          
+
+          <!-- Dynamic Actor Objects -->
+          
+          <actor name="dynamic_actor_0">
+            <pose>8.429036525271528 3.7513948901182674 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>8.429036525271528 3.7513948901182674 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>8.429036525271528 5.751394890118267 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>6.429036525271528 5.751394890118267 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>8.429036525271528 5.751394890118267 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>8.429036525271528 3.7513948901182674 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_1">
+            <pose>4.7674423882220385 6.618444354177842 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>4.7674423882220385 6.618444354177842 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>6.7674423882220385 6.618444354177842 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>6.7674423882220385 8.618444354177843 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>6.7674423882220385 6.618444354177842 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>4.7674423882220385 6.618444354177842 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_2">
+            <pose>7.2166365463932145 3.6546573571985057 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>7.2166365463932145 3.6546573571985057 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>9.216636546393215 3.6546573571985057 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>9.216636546393215 5.654657357198506 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>9.216636546393215 3.6546573571985057 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>7.2166365463932145 3.6546573571985057 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_3">
+            <pose>5.360100865554704 9.457837225028467 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>5.360100865554704 9.457837225028467 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>7.360100865554704 9.457837225028467 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>7.360100865554704 7.457837225028467 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>7.360100865554704 9.457837225028467 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>5.360100865554704 9.457837225028467 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_4">
+            <pose>7.5146216596271405 7.319689928873794 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>7.5146216596271405 7.319689928873794 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>7.5146216596271405 9.319689928873794 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>5.5146216596271405 9.319689928873794 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>7.5146216596271405 9.319689928873794 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>7.5146216596271405 7.319689928873794 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_5">
+            <pose>7.414546973353597 5.5020543818516545 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>7.414546973353597 5.5020543818516545 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>9.414546973353598 5.5020543818516545 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>9.414546973353598 3.5020543818516545 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>9.414546973353598 5.5020543818516545 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>7.414546973353597 5.5020543818516545 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+
+        </world>
+      </sdf>
+      

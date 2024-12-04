@@ -43,6 +43,84 @@
 
     </link>
 
+
+        <link name="velodyne_link">
+      <pose>-0.03 0 0.205 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0.000</ixy>
+          <ixz>0.000</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0.000</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+
+<visual name="velodyne_visual">
+  <geometry>
+    <cylinder>
+      <radius>0.025</radius>
+      <length>0.05</length>
+    </cylinder>
+  </geometry>
+</visual>
+
+      <collision name="velodyne_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+     <sensor name='velodyne-VLP16' type='ray'>
+        <visualize>0</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>-1.57</min_angle>
+              <max_angle>1.57</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.261799</min_angle>
+              <max_angle>0.261799</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.3</min>
+            <max>131</max>
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0</stddev>
+          </noise>
+        </ray>
+        <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_laser.so'>
+          <ros>
+            <namespace>/turtlebot3_burger</namespace>
+            <remapping>~/out:=velodyne_points</remapping>
+          </ros>
+          <output_type>sensor_msgs/PointCloud2</output_type>
+          <frame_name>velodyne_link</frame_name>
+          <min_range>0.1</min_range>
+          <max_range>130.0</max_range>
+          <gaussianNoise>0.008</gaussianNoise>
+        </plugin>
+        <pose>0.125 0 0.2877 0 -0 0</pose>
+      </sensor>
+    </link>
+
+
     <link name="imu_link">
       <sensor name="tb3_imu" type="imu">
         <always_on>true</always_on>
@@ -368,6 +446,13 @@
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
+
+        <joint name="velodyne_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>velodyne_link</child>
+      <pose>0 0 0.3 0 0 0</pose>
+    </joint>
+
 
 
 <link name="camera_link">

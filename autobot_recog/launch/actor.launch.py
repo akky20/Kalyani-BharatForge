@@ -16,11 +16,11 @@ def generate_launch_description():
 
     # Launch configurations
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='0.7')
-    y_pose = LaunchConfiguration('y_pose', default='0.4')
+    x_pose = LaunchConfiguration('x_pose', default='2.7')
+    y_pose = LaunchConfiguration('y_pose', default='2.4')
 
     # Define the default world file path using the package directory
-    default_world_path = 'src/autobot_recog/worlds/warehouse_world.world'
+    default_world_path = 'src/autobot_recog/worlds/actor.world'
 
 
     # Declare the world argument
@@ -66,7 +66,6 @@ def generate_launch_description():
             'y_pose': y_pose
         }.items()
     )
-
 
     # Create the launch description and add all actions
     ld = LaunchDescription()

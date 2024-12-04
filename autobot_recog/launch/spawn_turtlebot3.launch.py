@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     # Get the model file (absolute path)
     # urdf_file = os.path.join(get_package_share_directory('autobot_recog'), 'urdf', 'model.sdf')
-    urdf_file = 'src/autobot_recog/urdf/other.sdf'
+    urdf_file = 'src/autobot_recog/urdf/velodyne_bot.sdf'
 
     # Ensure the file exists
     if not os.path.exists(urdf_file):
