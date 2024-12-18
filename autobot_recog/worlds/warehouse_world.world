@@ -10,7 +10,7 @@
 
           <!-- Light Sources -->
           
-          <light name="light_0" type="point">
+          <!-- <light name="light_0" type="point">
             <pose>2.5 2.5 5 0 0 0</pose>
             <diffuse>1 1 1 1</diffuse>
             <specular>0.5 0.5 0.5 1</specular>
@@ -61,7 +61,7 @@
             </attenuation>
             <cast_shadows>false</cast_shadows>
           </light>
-      
+       -->
 
           <!-- Static Objects -->
           

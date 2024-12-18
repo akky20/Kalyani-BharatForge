@@ -1,3 +1,0 @@
-/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/nlohmann_json.dir
-/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/edit_cache.dir
-/home/host/dev_ws/autobot/src/build/librealsense2/external-projects/json-download/CMakeFiles/rebuild_cache.dir

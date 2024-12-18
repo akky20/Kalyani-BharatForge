@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="default_world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <!-- Static Objects -->
+    
+    <model name="wall_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>5 0 1.5 0 0 0</pose>
+    </model>
+    
+    <model name="wall_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 10 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 10 3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>10 5 1.5 0 0 0</pose>
+    </model>
+    
+    <model name="wall_3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.1 3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>5 10 1.5 0 0 0</pose>
+    </model>
+    
+    <model name="wall_4">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 10 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 10 3</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>0 5 1.5 0 0 0</pose>
+    </model>
+    
+    <model name="static_object_0">
+      <static>true</static>
+      <pose>5.004385425352387 2.4421156749322606 0 0 0 0</pose>
+      <include>
+        <uri>model://table_conference_3</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_1">
+      <static>true</static>
+      <pose>2.7863817534570665 8.221520057582445 0 0 0 0</pose>
+      <include>
+        <uri>model://sofa_set_3</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_2">
+      <static>true</static>
+      <pose>7.142293166142026 4.808301818882975 0 0 0 0</pose>
+      <include>
+        <uri>model://office_chair</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_3">
+      <static>true</static>
+      <pose>1.0082136169050775 7.565919742595811 0 0 0 0</pose>
+      <include>
+        <uri>model://lamp_large</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_4">
+      <static>true</static>
+      <pose>8.140188230860096 2.525681695111961 0 0 0 0</pose>
+      <include>
+        <uri>model://desk_yellow</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_5">
+      <static>true</static>
+      <pose>6.217146176646581 6.228630570230191 0 0 0 0</pose>
+      <include>
+        <uri>model://desk_yellow</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_6">
+      <static>true</static>
+      <pose>1.8219003256755504 3.3114807644882154 0 0 0 0</pose>
+      <include>
+        <uri>model://trash_bin</uri>
+      </include>
+    </model>
+            
+    <model name="static_object_7">
+      <static>true</static>
+      <pose>1.2 1.9466932240144685 0 0 0 0</pose>
+      <include>
+        <uri>model://office_chair</uri>
+      </include>
+    </model>
+            
+
+    <!-- Dynamic Actor Objects -->
+    
+    <actor name="dynamic_actor_0">
+      <pose>5.646903312726922 7.99111080607264 0 0 0 0</pose>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="walking">
+            <waypoint><time>0</time><pose>5.646903312726922 7.99111080607264 0 0 0 0</pose></waypoint>
+<waypoint><time>2</time><pose>7.646903312726922 7.99111080607264 0 0 0 0.0</pose></waypoint>
+<waypoint><time>4</time><pose>7.646903312726922 5.99111080607264 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>6</time><pose>7.646903312726922 7.99111080607264 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>8</time><pose>5.646903312726922 7.99111080607264 0 0 0 3.141592653589793</pose></waypoint>
+
+        </trajectory>
+        <loop>true</loop>
+      </script>
+    </actor>
+    
+    <actor name="dynamic_actor_1">
+      <pose>1.464566352168224 6.366733186030059 0 0 0 0</pose>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <script>
+        <trajectory id="0" type="walking">
+            <waypoint><time>0</time><pose>1.464566352168224 6.366733186030059 0 0 0 0</pose></waypoint>
+<waypoint><time>2</time><pose>3.464566352168224 6.366733186030059 0 0 0 0.0</pose></waypoint>
+<waypoint><time>4</time><pose>3.464566352168224 4.366733186030059 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>6</time><pose>3.464566352168224 6.366733186030059 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>8</time><pose>1.464566352168224 6.366733186030059 0 0 0 3.141592653589793</pose></waypoint>
+
+        </trajectory>
+        <loop>true</loop>
+      </script>
+    </actor>
+    
+
+  </world>
+</sdf>
+    

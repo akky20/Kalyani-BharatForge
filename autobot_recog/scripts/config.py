@@ -1,0 +1,1 @@
+class_labels = ["carton", "fire hydrant", "person", "shelf", "table"]

@@ -13,10 +13,12 @@ import math
 from datetime import datetime
 from bot_package.rl.train_velodyne_node import td3  # Import the TD3 implementation
 from bot_package.yolo.object_detection import ObjectDetection as OD
-from bot_package.rl.point_cloud2 import point_cloud2 as pc2  # Utility for PointCloud2 message parsing
+# Utility for PointCloud2 message parsing
+from bot_package.rl.point_cloud2 import point_cloud2 as pc2
+from communication_msgs.srv import Liveliness, TaskAssignment, TaskCompletion
 
 
-class AgentNode(Node):
+class MasterSlaveNode(Node):
     def __init__(self, agent_id, namespace, model_path, mongo_uri="mongodb://localhost:27017/"):
         super().__init__(f'{namespace}_node')
         self.agent_id = agent_id
@@ -28,36 +30,85 @@ class AgentNode(Node):
         # MongoDB collections
         self.map_collection = self.db['map']
         self.robot_collection = self.db['robots']
-        self.tasks_collection = self.db['tasks']
 
         # ROS2 Publishers and Subscribers
-        self.cmd_publisher = self.create_publisher(Twist, f'{self.namespace}/cmd_vel', 10)
-        self.velodyne_subscriber = self.create_subscription(PointCloud2, f'{self.namespace}/velodyne_points', self.velodyne_callback, 10)
-        self.lidar_subscriber = self.create_subscription(LaserScan, f'{self.namespace}/scan', self.lidar_callback, 10)
-        self.camera_subscriber = self.create_subscription(Image, f'{self.namespace}/camera/image_raw', self.camera_callback, 10)
-        self.odom_subscriber = self.create_subscription(Odometry, f'{self.namespace}/odom', self.odom_callback, 10)
+        self.cmd_publisher = self.create_publisher(
+            Twist, f'{self.namespace}/cmd_vel', 10)
+        self.velodyne_subscriber = self.create_subscription(
+            PointCloud2, f'{self.namespace}/velodyne_points', self.velodyne_callback, 10)
+        self.lidar_subscriber = self.create_subscription(
+            LaserScan, f'{self.namespace}/scan', self.lidar_callback, 10)
+        self.camera_subscriber = self.create_subscription(
+            Image, f'{self.namespace}/camera/image_raw', self.camera_callback, 10)
+        self.odom_subscriber = self.create_subscription(
+            Odometry, f'{self.namespace}/odom', self.odom_callback, 10)
 
         # Load the trained TD3 model
-        self.td3_model = td3(state_dim=24, action_dim=2, max_action=1)  # Adjust state_dim and action_dim as needed
+        # Adjust state_dim and action_dim as needed
+        self.td3_model = td3(state_dim=24, action_dim=2, max_action=1)
         self.td3_model.load("td3_velodyne", "./pytorch_models")
 
         # Load the trained YOLO Nano object detection model
         self.model = OD(model_path)
 
+        # Master-Slave communication
+        self.master = None
+        self.isMaster = False
+        if self.agent_id[-1] == '1':
+            self.isMaster = True
+        if self.isMaster:
+            self.tasks_collection = self.db['tasks']
+        else:
+            self.livesrv = self.create_service(
+                Liveliness, agent_id, self.handle_liveliness)
+
         # State variables
         self.grid_size = 0.05  # 5x5 cm
-        self.velodyne_data = np.ones(20) * 10  # Placeholder for processed Velodyne data
-        self.lidar_data = np.ones(20) * 10  # Placeholder for processed LiDAR data
+        # Placeholder for processed Velodyne data
+        self.velodyne_data = np.ones(20) * 10
+        # Placeholder for processed LiDAR data
+        self.lidar_data = np.ones(20) * 10
         self.camera_image = None
         self.current_pose = [0, 0]
         self.current_task = None  # The task currently assigned to this agent
 
-        self.get_logger().info(f"Agent Node {self.agent_id} Initialized in namespace {self.namespace}")
+        self.get_logger().info(
+            f"Agent Node {self.agent_id} Initialized in namespace {self.namespace}")
+
+    def handle_liveliness(self, request, response):
+        response.requesterid = request.senderid
+        response.receiverid = self.agent_id
+        response.message = "ALIVE"
+        if self.master == None:
+            self.master = request.senderid
+            self.live_count = 3
+            self.tim = self.create_timer(15, self.ask_liveliness)
+        return response
+
+    def ask_liveliness(self):
+        livereq = Liveliness.Request()
+        livereq.senderid = self.agent_id
+        livereq.message = "ARE YOU ALIVE?"
+        self.live_count -= 1
+        if self.live_count < 0:
+            if int(self.agent_id[-1]) == int(self.master[-1]) + 1:
+                self.isMaster = True
+                self.tasks_collection = self.db['tasks']
+            self.master = None
+            self.tim.cancel()
+        future = self.livesrv.call_async(livereq)
+        future.add_done_callback(self.handle_liveness_reply)
+
+    def handle_liveness_reply(self, future):
+        result = future.result()
+        if result:
+            self.live_count += 1
 
     def velodyne_callback(self, msg):
         """Handle Velodyne data."""
         self.velodyne_data = np.ones(20) * 10  # Reset processed data
-        data = list(pc2.read_points(msg, skip_nans=False, field_names=("x", "y", "z")))
+        data = list(pc2.read_points(
+            msg, skip_nans=False, field_names=("x", "y", "z")))
 
         for point in data:
             if point[2] > -0.2:  # Ignore points below a certain height
@@ -66,7 +117,8 @@ class AgentNode(Node):
 
                 # Convert angle to index for discretization
                 index = int((angle + np.pi) / (2 * np.pi / 20)) % 20
-                self.velodyne_data[index] = min(self.velodyne_data[index], distance)
+                self.velodyne_data[index] = min(
+                    self.velodyne_data[index], distance)
 
     def lidar_callback(self, msg):
         """Handle LiDAR data."""
@@ -105,7 +157,6 @@ class AgentNode(Node):
     def execute_task(self):
         """Execute the assigned task using TD3-based navigation."""
         if not self.current_task:
-            self.assign_task()
             return
 
         goal = self.current_task["coordinates"]
@@ -120,12 +171,11 @@ class AgentNode(Node):
                 self.complete_task(status)
                 break
 
-
     def get_robot_state(self, action):
         v_state = []
         v_state[:] = self.velodyne_data[:]
         laser_state = [v_state]
-    
+
         # Calculate robot heading from odometry data
         self.odom_x = self.current_pose[0]
         self.odom_y = self.current_pose[1]
@@ -169,7 +219,7 @@ class AgentNode(Node):
 
     def execute_action(self, action):
         """Execute a continuous action provided by the TD3 model."""
-        linear = float((action[0] + 1)/2) # Scale action to [0, 1]
+        linear = float((action[0] + 1)/2)  # Scale action to [0, 1]
         angular = float(action[1])  # Angular velocity
         self.control_motion(linear, angular)
         state = self.get_robot_state(action)
@@ -180,7 +230,7 @@ class AgentNode(Node):
         if self.is_task_completed():
             target = True
             done = True
-            status = "success" 
+            status = "success"
         return state, done, target, status
 
     def control_motion(self, linear, angular):
@@ -196,7 +246,8 @@ class AgentNode(Node):
             return False
         goal = self.current_task["coordinates"]
         distance_to_goal = math.sqrt(
-            (goal[0] - self.current_pose[0]) ** 2 + (goal[1] - self.current_pose[1]) ** 2
+            (goal[0] - self.current_pose[0]) ** 2 +
+            (goal[1] - self.current_pose[1]) ** 2
         )
         return distance_to_goal < 0.2
 
@@ -210,7 +261,8 @@ class AgentNode(Node):
         grid_y = math.floor(y / self.grid_size)
 
         # Check if the grid cell is already occupied
-        existing_entry = self.map_collection.find_one({"coordinates": [grid_x, grid_y]})
+        existing_entry = self.map_collection.find_one(
+            {"coordinates": [grid_x, grid_y]})
 
         # If there's no existing entry or the existing object is dynamic
         if not existing_entry or (existing_entry and existing_entry["static"] == False):
@@ -234,71 +286,12 @@ class AgentNode(Node):
                     }},
                     upsert=True
                 )
-                self.get_logger().info(f"Added object: {label} at [{grid_x}, {grid_y}] (Static: {is_static})")
+                self.get_logger().info(
+                    f"Added object: {label} at [{grid_x}, {grid_y}] (Static: {is_static})")
 
     def label_staticity(self, label):
         """Determine whether an object is static or dynamic."""
         return label in static_objects
-
-    def assign_task(self):
-        """Assign the next task to the agent."""
-        if self.current_task is not None:
-            return  # Already handling a task
-
-        # Check for goal-oriented tasks
-        task = self.fetch_highest_priority_task(task_type="goal")
-        if not task:
-            # If no goal-oriented tasks, check for routine tasks
-            task = self.fetch_highest_priority_task(task_type="routine")
-
-        if task:
-            # Mark task as in_progress and assign to this agent
-            self.tasks_collection.update_one(
-                {"task_id": task["task_id"]},
-                {"$set": {"status": "in_progress", "assigned_to": self.agent_id}}
-            )
-            self.current_task = task
-            self.get_logger().info(f"Assigned task: {task['description']} with priority {task['priority']}")
-
-    def fetch_highest_priority_task(self, task_type):
-        """Fetch the highest-priority task of the given type."""
-        tasks = self.tasks_collection.find(
-            {"status": "pending", "type": task_type}
-        ).sort("priority", 1)  # Sort by priority (ascending)
-        nearest_task = None
-        min_distance = float('inf')
-
-        for task in tasks:
-            task_coords = task["coordinates"]
-            distance = math.sqrt(
-                (task_coords[0] - self.current_pose[0]) ** 2 + (task_coords[1] - self.current_pose[1]) ** 2
-            )
-            if distance < min_distance:
-                nearest_task = task
-                min_distance = distance
-
-        return nearest_task
-
-    def complete_task(self, status):
-        """Mark the current task as completed."""
-        if self.current_task:
-            if self.current_task["type"] == "routine":
-                # Reset routine tasks to pending after a delay
-                time.sleep(self.current_task.get("recurring_interval", 300))
-                self.tasks_collection.update_one(
-                    {"task_id": self.current_task["task_id"]},
-                    {"$set": {"status": "pending", "assigned_to": None}}
-                )
-                self.get_logger().info(f"Routine task reset: {self.current_task['description']}")
-            else:
-                # Goal-oriented tasks are marked completed
-                self.tasks_collection.update_one(
-                    {"task_id": self.current_task["task_id"]},
-                    {"$set": {"status": status}}
-                )
-                self.get_logger().info(f"Completed task: {self.current_task['description']}")
-
-            self.current_task = None
 
     def turn_toward(self, grid_x, grid_y):
         """Turn the robot toward a grid cell."""

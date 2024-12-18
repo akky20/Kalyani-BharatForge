@@ -1,3 +1,0 @@
-repository='https://github.com/curl/curl.git'
-module=''
-tag='origin'

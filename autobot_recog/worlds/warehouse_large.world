@@ -1,0 +1,991 @@
+<?xml version="1.0" ?>
+      <sdf version="1.7">
+        <world name="default_world">
+          <include>
+            <uri>model://sun</uri>
+          </include>
+          <include>
+            <uri>model://ground_plane</uri>
+          </include>
+
+
+      
+
+          <!-- Static Objects -->
+          
+        <model name="wall_1">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>30.0 0.1 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>30.0 0.1 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>15.0 0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_2">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>0.1 30.0 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>0.1 30.0 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>30.0 15.0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_3">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>30.0 0.1 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>30.0 0.1 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>15.0 30.0 1.5 0 0 0</pose>
+        </model>
+        
+        <model name="wall_4">
+          <static>true</static>
+          <link name="link">
+            <collision name="collision">
+              <geometry>
+                <box>
+                  <size>0.1 30.0 3</size>
+                </box>
+              </geometry>
+            </collision>
+            <visual name="visual">
+              <geometry>
+                <box>
+                  <size>0.1 30.0 3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>file://media/materials/scripts/gazebo.material</uri>
+                  <name>Gazebo/Bricks</name>
+                </script>
+              </material>
+            </visual>
+          </link>
+          <pose>0 15.0 1.5 0 0 0</pose>
+        </model>
+        
+      <include>
+        <uri>model://fire_hydrant</uri>
+        <name>fire_hydrant_0</name>
+        <pose>29.5 29.5 0 0 0 0</pose>
+      </include>
+      
+      <include>
+        <uri>model://table</uri>
+        <name>table_0</name>
+        <pose>6.8070378492051535 21.999547939254768 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_1</name>
+        <pose>2.7733894458307184 12.688885862684005 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_2</name>
+        <pose>2.973379099903137 7.086762444365892 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_3</name>
+        <pose>19.43657935827389 16.330267825855213 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_4</name>
+        <pose>13.496587770002067 8.434444963627616 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_5</name>
+        <pose>22.66069806704111 4.925915764755948 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_6</name>
+        <pose>10.271415288932559 4.802193194428734 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_7</name>
+        <pose>21.80006088613701 16.072351507059143 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_8</name>
+        <pose>2.5324858631223623 8.878077129649949 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_9</name>
+        <pose>26.409371738929483 10.904396774542505 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_10</name>
+        <pose>21.055326351961735 1.5564017562076016 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_11</name>
+        <pose>23.08282288734528 29.36255701155843 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_12</name>
+        <pose>13.62094495010569 24.88966862856621 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_13</name>
+        <pose>11.157356626659727 6.401408110836036 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_14</name>
+        <pose>18.23027776774285 5.265703986663671 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_15</name>
+        <pose>5.036713815353081 11.431881076026373 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_16</name>
+        <pose>6.700609149519962 9.798768938693527 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_17</name>
+        <pose>6.97982293013749 1.1501672195595178 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_18</name>
+        <pose>26.140481743591 9.514465271634947 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_19</name>
+        <pose>11.910704271395662 27.27060865632009 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_20</name>
+        <pose>4.428999077085055 4.333057457954987 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_21</name>
+        <pose>16.153727774151797 22.311608824906834 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_22</name>
+        <pose>26.775557354633317 12.022254952155759 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_23</name>
+        <pose>29.720843028479166 4.294619648769334 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_24</name>
+        <pose>2.8909186003442993 1.5946447125721432 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_25</name>
+        <pose>20.34224391949128 17.853707309666426 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_26</name>
+        <pose>11.495930880593487 29.685192855106866 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_27</name>
+        <pose>7.64185795146167 16.57548652797251 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_28</name>
+        <pose>20.336388943592947 3.590731592317125 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_29</name>
+        <pose>22.42598286791165 22.9505224866604 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_30</name>
+        <pose>27.213784044606687 25.9673496671683 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_31</name>
+        <pose>4.724042349069191 22.77031968222448 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_32</name>
+        <pose>28.423592530543683 27.50404878630093 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_33</name>
+        <pose>17.92875970002278 14.662728957656856 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_34</name>
+        <pose>24.81729966909091 9.302418111918778 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_35</name>
+        <pose>2.5312086294244365 21.86446480740098 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_36</name>
+        <pose>29.148341012849095 15.968102618073663 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_37</name>
+        <pose>4.000387349192979 14.268358391722447 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_38</name>
+        <pose>5.0877579856341795 15.819144107580318 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_39</name>
+        <pose>12.724883029946252 6.469226881085629 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_40</name>
+        <pose>22.555849820419844 20.620081910148794 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_41</name>
+        <pose>9.980683276782761 15.419021146334238 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_42</name>
+        <pose>21.611235950076736 26.318539024165837 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_43</name>
+        <pose>14.191062378829107 23.4247349590063 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_44</name>
+        <pose>5.836133465111581 3.0691521011731706 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_45</name>
+        <pose>10.687207971050793 12.368627371072245 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_46</name>
+        <pose>20.131590599881726 29.3312902564326 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_47</name>
+        <pose>23.897538321506286 3.434363354446199 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_48</name>
+        <pose>5.830183689848021 13.478961015860705 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_49</name>
+        <pose>26.084784240489167 2.4313926958789653 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_50</name>
+        <pose>3.098098354767371 19.503488862356253 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_51</name>
+        <pose>24.946416518366576 28.88228921562864 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_52</name>
+        <pose>5.122808873875855 14.574977313341266 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_53</name>
+        <pose>25.79365166329438 26.91230881911224 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_54</name>
+        <pose>8.050010521895699 23.408489817677655 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_55</name>
+        <pose>8.64337717682884 20.81910850656481 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_56</name>
+        <pose>19.79139083374206 14.605473784968153 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_57</name>
+        <pose>8.9825516346391 28.8737972030871 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_58</name>
+        <pose>9.482702369183986 1.6842131830130256 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cabinet</uri>
+        <name>cabinet_59</name>
+        <pose>15.084371334417602 25.440508804629246 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_60</name>
+        <pose>1.8836355599690617 15.231723511005187 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_61</name>
+        <pose>25.70984837831583 12.151756319021013 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_62</name>
+        <pose>7.487974294543297 17.79776694458986 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_63</name>
+        <pose>16.930716945785047 9.564547440911122 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_64</name>
+        <pose>16.864611910912803 3.1594449681678194 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_65</name>
+        <pose>6.5093676431043965 8.04993227661188 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_66</name>
+        <pose>29.322057983443877 24.090158320648214 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_67</name>
+        <pose>27.992328116242277 4.175016986043684 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_68</name>
+        <pose>26.53549612736899 22.175533845837563 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_69</name>
+        <pose>21.44132073930842 6.226480444892607 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_70</name>
+        <pose>23.02512900138096 19.05855596812084 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://bookshelf</uri>
+        <name>bookshelf_71</name>
+        <pose>16.34947256048346 24.904012588626095 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://cardboard_box</uri>
+        <name>cardboard_box_72</name>
+        <pose>16.554742863651928 12.921686701270843 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_73</name>
+        <pose>9.324447157931957 26.809852066780664 0 0 0 0</pose>
+      </include>
+          
+      <include>
+        <uri>model://table</uri>
+        <name>table_74</name>
+        <pose>26.80816924118365 6.41826553485672 0 0 0 0</pose>
+      </include>
+          
+
+          <!-- Dynamic Actor Objects -->
+          
+          <actor name="dynamic_actor_0">
+            <pose>24.625909196918105 11.329370533241242 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>24.625909196918105 11.329370533241242 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>24.625909196918105 13.329370533241242 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>22.625909196918105 13.329370533241242 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>24.625909196918105 13.329370533241242 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>24.625909196918105 11.329370533241242 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_1">
+            <pose>6.56102255051193 26.306033378077547 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>6.56102255051193 26.306033378077547 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>6.56102255051193 28.306033378077547 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>4.56102255051193 28.306033378077547 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>6.56102255051193 28.306033378077547 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>6.56102255051193 26.306033378077547 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_2">
+            <pose>2.3765520168687924 28.159658264020603 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>2.3765520168687924 28.159658264020603 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>4.376552016868793 28.159658264020603 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>4.376552016868793 26.159658264020603 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>4.376552016868793 28.159658264020603 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>2.3765520168687924 28.159658264020603 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_3">
+            <pose>15.24415269387088 12.63627639932229 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>15.24415269387088 12.63627639932229 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>15.24415269387088 14.63627639932229 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>13.24415269387088 14.63627639932229 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>15.24415269387088 14.63627639932229 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>15.24415269387088 12.63627639932229 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_4">
+            <pose>8.018931547761161 8.154503830662167 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>8.018931547761161 8.154503830662167 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>10.018931547761161 8.154503830662167 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>10.018931547761161 10.154503830662167 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>10.018931547761161 8.154503830662167 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>8.018931547761161 8.154503830662167 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_5">
+            <pose>11.69148235362423 9.773511283238689 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>11.69148235362423 9.773511283238689 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>13.69148235362423 9.773511283238689 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>13.69148235362423 11.773511283238689 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>13.69148235362423 9.773511283238689 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>11.69148235362423 9.773511283238689 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_6">
+            <pose>9.513185390886102 12.319742707488048 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>9.513185390886102 12.319742707488048 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>9.513185390886102 14.319742707488048 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>7.513185390886102 14.319742707488048 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>9.513185390886102 14.319742707488048 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>9.513185390886102 12.319742707488048 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_7">
+            <pose>27.264919894571527 18.02208042809571 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>27.264919894571527 18.02208042809571 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>29.264919894571527 18.02208042809571 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>29.264919894571527 20.02208042809571 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>29.264919894571527 18.02208042809571 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>27.264919894571527 18.02208042809571 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_8">
+            <pose>26.54948571753162 18.752210496318042 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>26.54948571753162 18.752210496318042 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>28.54948571753162 18.752210496318042 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>28.54948571753162 20.752210496318042 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>28.54948571753162 18.752210496318042 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>26.54948571753162 18.752210496318042 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_9">
+            <pose>24.157628103281386 22.34503791969999 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>24.157628103281386 22.34503791969999 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>24.157628103281386 24.34503791969999 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>20</time><pose>22.157628103281386 24.34503791969999 0 0 0 3.141592653589793</pose></waypoint>
+<waypoint><time>30</time><pose>24.157628103281386 24.34503791969999 0 0 0 0.0</pose></waypoint>
+<waypoint><time>40</time><pose>24.157628103281386 22.34503791969999 0 0 0 -1.5707963267948966</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_10">
+            <pose>22.498524327957128 11.530709981012436 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>22.498524327957128 11.530709981012436 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>24.498524327957128 11.530709981012436 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>24.498524327957128 13.530709981012436 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>24.498524327957128 11.530709981012436 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>22.498524327957128 11.530709981012436 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_11">
+            <pose>4.720037468077673 24.405698003228217 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>4.720037468077673 24.405698003228217 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>6.720037468077673 24.405698003228217 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>6.720037468077673 26.405698003228217 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>6.720037468077673 24.405698003228217 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>4.720037468077673 24.405698003228217 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_12">
+            <pose>22.26094632388592 14.55776673135552 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>22.26094632388592 14.55776673135552 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>24.26094632388592 14.55776673135552 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>24.26094632388592 16.55776673135552 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>24.26094632388592 14.55776673135552 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>22.26094632388592 14.55776673135552 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_13">
+            <pose>19.32486013500653 10.666980135443247 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>19.32486013500653 10.666980135443247 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>21.32486013500653 10.666980135443247 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>21.32486013500653 12.666980135443247 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>21.32486013500653 10.666980135443247 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>19.32486013500653 10.666980135443247 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+          <actor name="dynamic_actor_14">
+            <pose>10.168146147906114 10.628607061982065 0 0 0 0</pose>
+            <skin>
+              <filename>walk.dae</filename>
+            </skin>
+            <script>
+              <trajectory id="0" type="walking">
+                  <waypoint><time>0</time><pose>10.168146147906114 10.628607061982065 0 0 0 0</pose></waypoint>
+<waypoint><time>10</time><pose>12.168146147906114 10.628607061982065 0 0 0 0.0</pose></waypoint>
+<waypoint><time>20</time><pose>12.168146147906114 12.628607061982065 0 0 0 1.5707963267948966</pose></waypoint>
+<waypoint><time>30</time><pose>12.168146147906114 10.628607061982065 0 0 0 -1.5707963267948966</pose></waypoint>
+<waypoint><time>40</time><pose>10.168146147906114 10.628607061982065 0 0 0 3.141592653589793</pose></waypoint>
+
+              </trajectory>
+              <loop>true</loop>
+            </script>
+            <link name="collision_link">
+            <collision name="collision">
+              <geometry>
+              <box>
+                <size>0.5 0.5 1.0</size>
+              </box>
+              </geometry>
+            </collision>
+            </link>
+          </actor>
+          
+
+        </world>
+      </sdf>
+      
